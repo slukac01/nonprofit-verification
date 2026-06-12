@@ -1,4 +1,4 @@
-# Nonprofit Verification Worker
+# Nonprofit Verification Workers
 
 This project is a TypeScript-based Notion worker that verifies nonprofits against country-specific public registries and normalizes the result into a consistent response shape.
 
