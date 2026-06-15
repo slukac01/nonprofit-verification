@@ -76,6 +76,12 @@ Build the project:
 npm run build
 ```
 
+Run the automated test suite:
+
+```bash
+npm test
+```
+
 ## Environment Variables
 
 Some adapters require credentials or access tokens:
@@ -90,7 +96,15 @@ Create a local `.env` file if your runtime loads environment variables from it, 
 ```text
 .
 ├── src/
-│   └── index.ts
+│   ├── adapters/      # Country/source-specific verification logic
+│   ├── core/          # Shared types, HTTP helpers, parsing, normalization
+│   ├── index.ts       # Worker tool registration
+│   ├── router.ts      # Country routing and adapter orchestration
+│   └── sources.ts     # Source metadata and adapter registry
+├── test/
+│   ├── adapters/      # Focused adapter tests with mocked fetch responses
+│   ├── helpers/       # Shared test helpers
+│   └── router/        # Routing and env-gating tests
 ├── worker/
 │   └── src/
 ├── package.json
